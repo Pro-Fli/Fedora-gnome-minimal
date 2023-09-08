@@ -21,7 +21,7 @@ sudo dnf install NetworkManager-wifi -y
 sudo dnf install iwlwifi-mvm-firmware -y
 
 # Install Softwares and libs
-sudo dnf glib2-devel wget git pciutils transmission uget gnome-tweaks gnome-extensions chrome-gnome-shell firefox unzip zip tar rsync thunderbird vlc -y
+sudo dnf glib2-devel wget git pciutils transmission uget gnome-tweaks gnome-extensions chrome-gnome-shell firefox unzip zip tar rsync thunderbird vlc NetworkManager-wifi pciutils usbutils iwlwifi-mvm-firmware rsync pulseaudio gnome-bluetooth gvfs-mtp gvfs-gphoto2 gvfs-afc ifuse -y
 
 # Update firmware
 sudo dnf install fwupd -y
@@ -33,6 +33,9 @@ sudo fwupdmgr update
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser -y
+
+# install virtual-box
+sudo  dnf install akmod-VirtualBox kernel-devel-$(uname -r) -y
 
 # Install 1Password Linux
 sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
